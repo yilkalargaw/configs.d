@@ -1,0 +1,3 @@
+[submodule "awesome_config"]
+	path = awesome_config
+	url = https://github.com/yilkalargaw/awesome_config.git
