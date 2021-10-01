@@ -13,4 +13,5 @@ fi
 # 	#dbus-launch --exit-with-session dwm || break
 # 	ssh-agent awesome || break
 # done
-exec awesome &
+# exec awesome &
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec awesome &
