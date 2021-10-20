@@ -9,10 +9,8 @@ conky.config = {
     update_interval = 1.2,
     total_run_times = 0,
     own_window = true,
-    own_window_type = 'override', -- or 'desktop'
-    own_window_argb_visual = true,
+    own_window_type = 'desktop', -- -- 'override' or 'desktop'
 --    own_window_transparent = true,
-    own_window_transparent = false,
     own_window_colour = '000000',
     own_window_argb_visual = true,
     own_window_argb_value = 50,
@@ -35,7 +33,7 @@ conky.config = {
     uppercase = false,
     cpu_avg_samples = 2,
     override_utf8_locale = false,
-    uppercase = true,
+    uppercase = true
 }
 
 conky.text = [[
