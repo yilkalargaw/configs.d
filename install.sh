@@ -1,6 +1,7 @@
-mkdir -p .local/share
-mkdir -p .config
+mkdir -p ~/.local/share
+mkdir -p ~/.config
+mkdir -p ~/.emacs.d
 git submodule update --init --recursive
-git stow graphic -t ~/
-git stow headless -t ~/
-git stow .emacs.d -t ~/
+stow graphic -t ~/
+stow headless -t ~/
+stow .emacs.d -t ~/.emacs.d
