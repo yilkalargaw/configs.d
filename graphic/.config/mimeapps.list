@@ -1,0 +1,29 @@
+[Added Associations]
+inode/directory=pcmanfm-qt.desktop;
+image/gif=lximage-qt.desktop;
+image/jpeg=lximage-qt.desktop;
+image/png=lximage-qt.desktop;
+image/svg=lximage-qt.desktop;
+
+
+[Default Applications]
+video/mp4=org.videolan.VLC.desktop
+video/avi=org.videolan.VLC.desktop
+video/mkv=org.videolan.VLC.desktop
+video/mpeg=org.videolan.VLC.desktop
+video/ogg=org.videolan.VLC.desktop
+video/webm=org.videolan.VLC.desktop
+video/x-matroska=org.videolan.VLC.desktop
+video/x-flv=org.videolan.VLC.desktop
+video/x-ogm+ogg=org.videolan.VLC.desktop
+video/x-ogm=org.videolan.VLC.desktop
+video/x-ogg=org.videolan.VLC.desktop
+video/x-theora+ogg=org.videolan.VLC.desktop
+video/x-ms-wmv=org.videolan.VLC.desktop
+video/x-webm=org.videolan.VLC.desktop
+video/x-flic=org.videolan.VLC.desktop
+text/html=io.gitlab.librewolf-community.desktop
+x-scheme-handler/http=io.gitlab.librewolf-community.desktop
+x-scheme-handler/https=io.gitlab.librewolf-community.desktop
+x-scheme-handler/about=io.gitlab.librewolf-community.desktop
+x-scheme-handler/unknown=io.gitlab.librewolf-community.desktop
