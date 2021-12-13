@@ -23,6 +23,11 @@ xdg-user-dirs-update &
 
 export QT_STYLE_OVERRIDE=kvantum &&
 
+export GTK_USE_PORTAL=1 &&
+
+export XDG_MENU_PREFIX="lxde-"
+export XDG_CURRENT_DESKTOP=LXDE
+
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 &&
 
 # exec enlightenment_start
