@@ -1,5 +1,7 @@
 # alias exemacs="tlbx enter exercismbox emacs"
-alias flatmacs="FLATPAK_ENABLE_SDK_EXT=ziglang,openjdk11,texlive,rust-stable,golang,haskell,php74,ldc,dmd,node14,llvm12 flatpak run org.gnu.emacs"
+# alias flatmacs="FLATPAK_ENABLE_SDK_EXT=ziglang,openjdk11,texlive,rust-stable,golang,haskell,php74,ldc,dmd,node14,llvm12 flatpak run org.gnu.emacs"
+alias flatmacs="flatpak run org.gnu.emacs"
+alias flatecli="flatpak --command=emacsclient run org.gnu.emacs"
 alias shbrowsybox="tlbx enter -it browsybox bash"
 alias rshbrowsybox="tlbx enter -it --user=root browsybox bash"
 alias shactibox="tlbx enter -it actibox bash"
