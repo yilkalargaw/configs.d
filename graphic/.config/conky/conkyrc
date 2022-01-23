@@ -73,8 +73,13 @@ Load: ${alignr}$loadavg
 # Core7@${freq 8} MHz ${alignr}${cpu cpu8}%
 # ${cpubar cpu8 5 }
 
-Ram ${alignr}$mem / $memmax ($memperc%)
-${membar 8}
+# Ram ${alignr}$mem / $memmax ($memperc%)
+# ${membar 8}
+
+RAM: ${alignr}${execi 10 free --si -m|awk '/^Mem/{printf "%.2fGiB\n",$3/1024}'} / $memmax   \
+(${execi 10 free --si -m|awk '/^Mem/{printf "%.1f%%\n", 100*$3/$2}'})
+${execibar 10 free --si -m|awk '/^Mem/{print 100*$3/$2}'}
+
 # swap ${alignr}$swap / $swapmax ($swapperc%)
 # ${swapbar 4}
 
