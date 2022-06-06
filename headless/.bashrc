@@ -32,4 +32,7 @@ if [[ "$INSIDE_EMACS" = 'vterm' ]] \
 	source ${EMACS_VTERM_PATH}/etc/emacs-vterm-bash.sh
 fi
 
-eval "$(direnv hook bash)"
+# better to keep this on the last line
+if [ -x "$(command -v direnv)" ]; then
+	eval "$(direnv hook bash)"
+fi
