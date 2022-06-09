@@ -17,6 +17,17 @@ xterm*faceSize4: 16
 ! VT font menu: Huge
 xterm*faceSize5: 22
 
+! add some padding
+xterm*internalBorder: 18
+
+! adjust line spacing
+XTerm.vt100.scaleHeight: 1.01
+
+! default size
+xterm*geometry: 86x20
+
+
+
 !! Scrolling ========================================================
 ! Use: Shift-Pageup / Shift-Pagedown to scroll or mousewheel
 ! Lines of output that you can scroll back over
