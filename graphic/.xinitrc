@@ -30,6 +30,8 @@ export XDG_CURRENT_DESKTOP=LXDE
 
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 &&
 
+xrdg -merge ~/.Xresources &
+
 # exec enlightenment_start
 # exec i3
 # exec mate-session
