@@ -11,7 +11,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-
 # to fix issues with podman
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 
@@ -22,15 +21,26 @@ dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XA
 xdg-user-dirs-update &
 
 export QT_STYLE_OVERRIDE=kvantum &&
+# export QT_QPA_PLATFORMTHEME="kvantum" &&
 
-export GTK_USE_PORTAL=1 &&
+export GTK_USE_PORTAL=1
 
-export XDG_MENU_PREFIX="lxde-"
-export XDG_CURRENT_DESKTOP=LXDE
+# export XDG_MENU_PREFIX="lxde-"
+# export XDG_CURRENT_DESKTOP="LXDE" &&
 
-xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 &&
+# export NO_AT_BRIDGE=1
 
-xrdg -merge ~/.Xresources &
+if [ -x "$(command -v xinput)" ] ; then
+     xinput set-prop "ELAN0521:01 04F3:31B1 Touchpad" "libinput Tapping Enabled" 1
+fi
+
+if [ -f ~/.Xresources ] && [ -x "$(command -v xrdb)" ] ; then
+     xrdb -load ~/.Xresources 
+fi
+
+if [ -f ~/.Xmodmap ] && [ -x "$(command -v xmodmap)" ] ; then
+     xmodmap ~/.Xmodmap
+fi
 
 # exec enlightenment_start
 # exec i3
