@@ -18,10 +18,9 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus
 # Add this when you include flatpak in your system
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
-xdg-user-dirs-update &
-
-export QT_STYLE_OVERRIDE=kvantum &&
-# export QT_QPA_PLATFORMTHEME="kvantum" &&
+if [ -x "$(command -v xdg-user-dirs-update)" ] ; then
+     xdg-user-dirs-update
+fi
 
 export GTK_USE_PORTAL=1
 
@@ -34,8 +33,17 @@ if [ -x "$(command -v xinput)" ] ; then
      xinput set-prop "ELAN0521:01 04F3:31B1 Touchpad" "libinput Tapping Enabled" 1
 fi
 
+if [ -x "$(command -v kvantummanager)" ] ; then
+     export QT_STYLE_OVERRIDE=kvantum
+   # export QT_QPA_PLATFORMTHEME="kvantum"
+fi
+
 if [ -f ~/.Xresources ] && [ -x "$(command -v xrdb)" ] ; then
      xrdb -load ~/.Xresources 
+fi
+
+if [ -x "$(command -v setxkbmap)" ] ; then
+     setxkbmap -option caps:swapescape
 fi
 
 if [ -f ~/.Xmodmap ] && [ -x "$(command -v xmodmap)" ] ; then
