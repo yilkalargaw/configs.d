@@ -4,3 +4,6 @@
 [submodule ".emacs.default"]
 	path = .emacs.default
 	url = https://github.com/yilkalargaw/yet-another-emacs.git
+[submodule "chemacs2"]
+	path = .emacs.d
+	url = https://github.com/plexus/chemacs2.git
