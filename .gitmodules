@@ -1,6 +1,6 @@
 [submodule "graphic/.config/awesome"]
 	path = graphic/.config/awesome
 	url = https://github.com/yilkalargaw/awesome_config.git
-[submodule ".emacs.d"]
+[submodule ".emacs.default"]
 	path = .emacs.default
 	url = https://github.com/yilkalargaw/yet-another-emacs.git
