@@ -1,6 +1,7 @@
 mkdir -p ~/.local/share
 mkdir -p ~/.config
 mkdir -p ~/.emacs.d
+mkdir -p ~/.emacs.default
 mkdir -p ~/.cache/joebkup
 git submodule update --init --recursive
 stow graphic -t ~/
