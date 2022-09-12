@@ -2,5 +2,5 @@
 	path = graphic/.config/awesome
 	url = https://github.com/yilkalargaw/awesome_config.git
 [submodule ".emacs.d"]
-	path = .emacs.d
+	path = .emacs.default
 	url = https://github.com/yilkalargaw/yet-another-emacs.git
