@@ -8,3 +8,4 @@ stow graphic -t ~/
 stow headless -t ~/
 stow .emacs.d -t ~/.emacs.d
 stow .emacs.default -t ~/.emacs.default
+stow .emacs-profiles.el -t ~/
