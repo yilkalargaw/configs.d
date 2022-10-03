@@ -1,3 +1,13 @@
+if [ -x "$(command -v exa)" ]; then
+	alias ls='exa'
+	alias tree='exa --tree'
+fi
+
+alias la='ls -a'
+alias ll='ls -l'
+alias lah='ls -lah'
+alias feh='feh -g 640x480  -dZ.'
+
 # alias exemacs="tlbx enter exercismbox emacs"
 # alias flatmacs="FLATPAK_ENABLE_SDK_EXT=ziglang,openjdk11,texlive,rust-stable,golang,haskell,php74,ldc,dmd,node14,llvm12 flatpak run org.gnu.emacs"
 alias flatmacs="flatpak run org.gnu.emacs"
