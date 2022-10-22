@@ -43,12 +43,12 @@ if [ -f ~/.Xresources ] && [ -x "$(command -v xrdb)" ] ; then
 fi
 
 if [ -x "$(command -v setxkbmap)" ] ; then
-     setxkbmap -option caps:swapescape
+     setxkbmap -option caps:swapescape -option ctrl:swap_lalt_lctl -option ctrl:swap_ralt_rctl
 fi
 
-if [ -f ~/.Xmodmap ] && [ -x "$(command -v xmodmap)" ] ; then
-     xmodmap ~/.Xmodmap
-fi
+# if [ -f ~/.Xmodmap ] && [ -x "$(command -v xmodmap)" ] ; then
+#      xmodmap ~/.Xmodmap
+# fi
 
 # exec enlightenment_start
 # exec i3
