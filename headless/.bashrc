@@ -36,3 +36,8 @@ fi
 if [ -x "$(command -v direnv)" ]; then
 	eval "$(direnv hook bash)"
 fi
+
+# if [ "$TERM" != "dumb" ]
+# then
+#     eval "$(starship init bash)"
+# fi
