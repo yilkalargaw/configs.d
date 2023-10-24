@@ -16,9 +16,9 @@ do
 
 	if podman ps -af name="${i}" --format "{{.Names}} {{.Image}}" | cut -d " " -f2 | cut -d "/" -f3 | grep -q "alpine:"; then
 		alias "sh${i}"="tlbx enter -it ${i} /bin/sh"
-		alias "rsh${i}"="tlbx enter -it --user=root${i} /bin/sh"
+		alias "rsh${i}"="tlbx enter -it --user=root ${i} /bin/sh"
 	else
 		alias "sh${i}"="tlbx enter -it ${i} /bin/bash"
-		alias "rsh${i}"="tlbx enter -it --user=root${i} /bin/bash"
+		alias "rsh${i}"="tlbx enter -it --user=root ${i} /bin/bash"
 	fi
 done
