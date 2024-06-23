@@ -14,7 +14,7 @@ alias lal='ls -alh'
 # alias la='ls -a'
 # alias ll='ls -l'
 # alias lal='ls -al'
-# alias lah='ls -lah'
+alias lah='ls -lah'
 alias feh='feh -g 640x480  -dZ.'
 
 label="com.gitlab.uppercat.tlbx"
