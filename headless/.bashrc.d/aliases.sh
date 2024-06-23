@@ -23,15 +23,14 @@ fi
 # some more ls aliases
 alias ll='ls -l'
 alias la='ls -A'
-
-# alias l='ls -CF'
 # alias la='ls -ah'
 # alias ll='ls -lh'
 # alias lal='ls -alh'
 # alias la='ls -a'
 # alias ll='ls -l'
-# alias lal='ls -al'
-# alias lah='ls -lah'
+alias lal='ls -al'
+alias lah='ls -lah'
+# alias l='ls -CF'
 
 alias feh='feh -g 640x480  -dZ.'
 
