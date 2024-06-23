@@ -3,9 +3,18 @@ if [ -x "$(command -v exa)" ]; then
 	alias tree='exa --tree'
 fi
 
-alias la='ls -a'
-alias ll='ls -l'
-alias lah='ls -lah'
+if [ -x "$(command -v eza)" ]; then
+	alias ls='eza'
+	alias tree='eza --tree'
+fi
+
+alias la='ls -ah'
+alias ll='ls -lh'
+alias lal='ls -alh'
+# alias la='ls -a'
+# alias ll='ls -l'
+# alias lal='ls -al'
+# alias lah='ls -lah'
 alias feh='feh -g 640x480  -dZ.'
 
 label="com.gitlab.uppercat.tlbx"
