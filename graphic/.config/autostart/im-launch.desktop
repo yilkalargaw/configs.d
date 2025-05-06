@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=sh -c 'IM_CONFIG_CHECK_ENV=1 im-launch true'
+Hidden=true
+Name=im-launch
+NoDisplay=true
+TryExec=im-launch
+Type=Application

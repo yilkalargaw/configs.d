@@ -1,0 +1,161 @@
+/* Zimbabwe GTK3 Theme */
+@define-color base_color #2d3244;
+@define-color highlight_color #4a6da7;
+@define-color highlighted_text_color #adb7ec;
+@define-color link_color #5294e2;
+@define-color link_visited_color #7c818c;
+@define-color text_color #adb7ec;
+@define-color tooltip_base_color #4b5162;
+@define-color tooltip_text_color #adb7ec;
+@define-color window_color #292d3e;
+@define-color window_text_color #adb7ec;
+@define-color insensitive_text_color alpha(@text_color, 0.5);
+
+/* Global Styles */
+* {
+    -GtkWidget-focus-padding: 1;
+    -GtkWidget-focus-line-width: 1;
+    color: @text_color;
+}
+
+/* Window Background */
+window, window.background {
+    background-color: @window_color;
+    color: @window_text_color;
+}
+
+/* Buttons */
+button {
+    background-image: linear-gradient(to bottom,
+                      shade(@base_color, 1.05),
+                      shade(@base_color, 1.0));
+    border-radius: 3px;
+    border: 1px solid shade(@base_color, 0.8);
+    padding: 5px 12px;
+    color: @text_color;
+    text-shadow: none;
+}
+
+button:hover {
+    background-image: linear-gradient(to bottom,
+                      shade(@base_color, 1.1),
+                      shade(@base_color, 1.05));
+}
+
+button:active, button:checked {
+    background-image: linear-gradient(to bottom,
+                      shade(@highlight_color, 0.9),
+                      shade(@highlight_color, 1.0));
+    color: @highlighted_text_color;
+}
+
+button:disabled {
+    color: @insensitive_text_color;
+}
+
+/* Entries */
+entry {
+    background-color: shade(@window_color, 0.9);
+    border: 1px solid shade(@window_color, 0.7);
+    padding: 5px;
+    color: @window_text_color;
+}
+
+entry:focus {
+    border-color: @highlight_color;
+}
+
+entry:disabled {
+    color: @insensitive_text_color;
+}
+
+/* Tooltips */
+tooltip {
+    background-color: @tooltip_base_color;
+    border: 1px solid shade(@tooltip_base_color, 0.8);
+    color: @tooltip_text_color;
+}
+
+/* Links */
+.link {
+    color: @link_color;
+}
+
+.link:visited {
+    color: @link_visited_color;
+}
+
+.link:hover {
+    color: shade(@link_color, 1.2);
+}
+
+/* Scrollbars */
+scrollbar slider {
+    background-color: shade(@base_color, 0.7);
+    border-radius: 3px;
+    min-width: 10px;
+    min-height: 10px;
+}
+
+scrollbar slider:hover {
+    background-color: shade(@base_color, 0.8);
+}
+
+scrollbar slider:active {
+    background-color: @highlight_color;
+}
+
+/* Treeviews and Lists */
+treeview.view, list {
+    background-color: @window_color;
+    color: @window_text_color;
+}
+
+treeview.view:selected, list:selected {
+    background-color: @highlight_color;
+    color: @highlighted_text_color;
+}
+
+treeview.view:disabled {
+    color: @insensitive_text_color;
+}
+
+/* Notebook Tabs */
+notebook tab {
+    background-color: shade(@base_color, 0.9);
+    padding: 5px 10px;
+    color: @text_color;
+}
+
+notebook tab:active {
+    background-color: @window_color;
+}
+
+/* Progress Bars */
+progressbar {
+    background-color: shade(@base_color, 0.8);
+    border: 1px solid shade(@base_color, 0.7);
+}
+
+progressbar progress {
+    background-color: @highlight_color;
+}
+
+/* Menus */
+menu {
+    background-color: @base_color;
+    border: 1px solid shade(@base_color, 0.8);
+}
+
+menuitem {
+    padding: 5px 20px;
+}
+
+menuitem:hover {
+    background-color: @highlight_color;
+    color: @highlighted_text_color;
+}
+
+menuitem:disabled {
+    color: @insensitive_text_color;
+}

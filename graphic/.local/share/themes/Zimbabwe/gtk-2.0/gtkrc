@@ -1,0 +1,80 @@
+# Zimbabwe GTK2 Theme
+gtk-color-scheme = "base_color:#2d3244\nhighlight_color:#4a6da7\nhighlighted_text_color:#adb7ec\nlink_color:#5294e2\nlink_visited_color:#7c818c\ntext_color:#adb7ec\ntooltip_base_color:#4b5162\ntooltip_text_color:#adb7ec\nwindow_color:#292d3e\nwindow_text_color:#adb7ec"
+
+style "default" {
+    # Main colors
+    bg[NORMAL] = @base_color
+    bg[PRELIGHT] = shade(1.1, @base_color)
+    bg[SELECTED] = @highlight_color
+    bg[INSENSITIVE] = shade(0.9, @base_color)
+    bg[ACTIVE] = shade(0.9, @base_color)
+    
+    fg[NORMAL] = @text_color
+    fg[PRELIGHT] = @highlighted_text_color
+    fg[SELECTED] = @highlighted_text_color
+    fg[INSENSITIVE] = mix(@text_color, @base_color, 0.5)
+    fg[ACTIVE] = @text_color
+    
+    # Text colors
+    text[NORMAL] = @text_color
+    text[PRELIGHT] = @highlighted_text_color
+    text[SELECTED] = @highlighted_text_color
+    text[INSENSITIVE] = mix(@text_color, @base_color, 0.5)
+    text[ACTIVE] = @text_color
+    
+    # Base colors
+    base[NORMAL] = @window_color
+    base[SELECTED] = @highlight_color
+    base[ACTIVE] = shade(0.9, @window_color)
+    base[INSENSITIVE] = shade(0.9, @window_color)
+    
+    # Button styling
+    engine "murrine" {
+        reliefstyle = 2
+        gradient_shades = {1.05, 1.0, 1.0, 1.0}
+        roundness = 2
+        lightborder_shade = 1.3
+    }
+}
+
+# Apply base style
+widget_class "*" style "default"
+
+# Window styling
+style "window" {
+    bg[NORMAL] = @window_color
+    fg[NORMAL] = @window_text_color
+}
+widget_class "GtkWindow" style "window"
+
+# Button styling
+style "button" {
+    xthickness = 3
+    ythickness = 3
+}
+widget_class "GtkButton" style "button"
+
+# Entry styling
+style "entry" {
+    base[NORMAL] = shade(0.9, @window_color)
+    base[SELECTED] = @highlight_color
+    base[ACTIVE] = shade(0.8, @window_color)
+    text[NORMAL] = @window_text_color
+    text[SELECTED] = @highlighted_text_color
+}
+widget_class "GtkEntry" style "entry"
+
+# Tooltip styling
+style "tooltip" {
+    bg[NORMAL] = @tooltip_base_color
+    fg[NORMAL] = @tooltip_text_color
+}
+widget_class "GtkTooltip" style "tooltip"
+
+# Link button styling
+style "linkbutton" {
+    fg[NORMAL] = @link_color
+    fg[PRELIGHT] = shade(1.2, @link_color)
+    fg[VISITED] = @link_visited_color
+}
+widget_class "GtkLinkButton" style "linkbutton"

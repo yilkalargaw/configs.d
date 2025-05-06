@@ -3,17 +3,17 @@
 
 conky.config = {
     background = yes,
-    font = 'DejaVu Mono:size=6',   
+    font = 'Roboto:size=10.5',
     use_xft = true,
-    xftalpha = 0.9,
+    -- xftalpha = 0.9,
     update_interval = 1.2,
     total_run_times = 0,
     own_window = true,
     own_window_type = 'desktop', -- -- 'override' or 'desktop'
---    own_window_transparent = true,
+    -- own_window_transparent = true,
     own_window_colour = '000000',
     own_window_argb_visual = true,
-    own_window_argb_value = 50,
+    own_window_argb_value = 20,
     own_window_class = 'conky',
     own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
     double_buffer = true,
@@ -22,18 +22,21 @@ conky.config = {
     draw_shades = false,
     draw_outline = false,
     draw_borders = false,
+    border_inner_margin = 8, 	-- margin between border and text
+    border_outer_margin = 8, 	-- margin between border and edge of window    border_width = 0, 		-- border width in pixels
     draw_graph_borders = true,
-    default_color = 'CDE0E7',
+    -- default_color = 'CDE0E7',
+    default_color = '#adb7ec',
     default_shade_color = 'black',
     default_outline_color = 'green',
-    gap_x = 15,
+    gap_x = 25,
     gap_y = 25,
-    alignment = 'tr',
+    alignment = 'middle_right',
     no_buffers = true,
     uppercase = false,
     cpu_avg_samples = 2,
     override_utf8_locale = false,
-    uppercase = true
+    -- uppercase = true
 }
 
 conky.text = [[
@@ -44,7 +47,7 @@ conky.text = [[
 # Remaining time: ${alignr}${if_empty ${battery_time}}AC ${acpiacadapter}${else}${battery_time}${endif}
 Uptime: $alignr$uptime
 #Sytem temp: ${alignr}${acpitemp}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
-Sytem temp: ${alignr}${acpitemp}°C
+Sytem Temp: ${alignr}${acpitemp}°C
 #CPU temp: ${alignr}${hwmon 1 temp 1}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
 #CPU temp: ${alignr}${hwmon 1 temp 1}°C
 #CPU temp: ${alignr}${execpi 5 sensors | grep 'Package id' | awk '{print $4}'}
@@ -73,28 +76,32 @@ Load: ${alignr}$loadavg
 # Core7@${freq 8} MHz ${alignr}${cpu cpu8}%
 # ${cpubar cpu8 5 }
 
-# Ram ${alignr}$mem / $memmax ($memperc%)
-# ${membar 8}
+RAM ${alignr}$legacymem / $memmax ($memperc%)
+${membar 6}
 
-RAM: ${alignr}${execi 10 free --si -m|awk '/^Mem/{printf "%.2fGiB\n",$3/1024}'} / $memmax   \
-(${execi 10 free --si -m|awk '/^Mem/{printf "%.1f%%\n", 100*$3/$2}'})
-${execibar 10 free --si -m|awk '/^Mem/{print 100*$3/$2}'}
+# RAM: ${alignr}${execi 10 free --si -m|awk '/^Mem/{printf "%.2fGiB\n",$3/1024}'} / $memmax   \
+# (${execi 10 free --si -m|awk '/^Mem/{printf "%.1f%%\n", 100*$3/$2}'})
+# ${execibar 10 free --si -m|awk '/^Mem/{print 100*$3/$2}'}
 
-# swap ${alignr}$swap / $swapmax ($swapperc%)
-# ${swapbar 4}
+Swap ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 6}
 
-CPU 1 | ${freq 1} MHz ${goto 92}| ${goto 100}${cpu cpu1}% ${goto 122}| ${goto 130}${cpubar cpu1 8,width_cpu_bar}
-CPU 2 | ${freq 2} MHz ${goto 92}| ${goto 100}${cpu cpu2}% ${goto 122}| ${goto 130}${cpubar cpu2 8,width_cpu_bar}
-CPU 3 | ${freq 3} MHz ${goto 92}| ${goto 100}${cpu cpu3}% ${goto 122}| ${goto 130}${cpubar cpu3 8,width_cpu_bar}
-CPU 4 | ${freq 4} MHz ${goto 92}| ${goto 100}${cpu cpu4}% ${goto 122}| ${goto 130}${cpubar cpu4 8,width_cpu_bar}
-# CPU 5 | ${freq 5} MHz ${goto 92}| ${goto 100}${cpu cpu5}% ${goto 122}| ${goto 130}${cpubar cpu5 8,width_cpu_bar}
-# CPU 6 | ${freq 6} MHz ${goto 92}| ${goto 100}${cpu cpu6}% ${goto 122}| ${goto 130}${cpubar cpu6 8,width_cpu_bar}
-# CPU 7 | ${freq 7} MHz ${goto 92}| ${goto 100}${cpu cpu7}% ${goto 122}| ${goto 130}${cpubar cpu7 8,width_cpu_bar}
-# CPU 8 | ${freq 8} MHz ${goto 92}| ${goto 100}${cpu cpu8}% ${goto 122}| ${goto 130}${cpubar cpu8 8,width_cpu_bar}
+# CPU 1 | ${freq 1} MHz ${goto 122}| ${goto 130}${cpu cpu1}% ${goto 152}| ${goto 165}${cpubar cpu1 8,width_cpu_bar}
+# CPU 2 | ${freq 2} MHz ${goto 122}| ${goto 130}${cpu cpu2}% ${goto 152}| ${goto 165}${cpubar cpu2 8,width_cpu_bar}
+# CPU 3 | ${freq 3} MHz ${goto 122}| ${goto 130}${cpu cpu3}% ${goto 152}| ${goto 165}${cpubar cpu3 8,width_cpu_bar}
+# CPU 4 | ${freq 4} MHz ${goto 122}| ${goto 130}${cpu cpu4}% ${goto 152}| ${goto 165}${cpubar cpu4 8,width_cpu_bar}
+# CPU 5 | ${freq 5} MHz ${goto 122}| ${goto 130}${cpu cpu5}% ${goto 152}| ${goto 165}${cpubar cpu5 8,width_cpu_bar}
+# CPU 6 | ${freq 6} MHz ${goto 122}| ${goto 130}${cpu cpu6}% ${goto 152}| ${goto 165}${cpubar cpu6 8,width_cpu_bar}
+# CPU 7 | ${freq 7} MHz ${goto 122}| ${goto 130}${cpu cpu7}% ${goto 152}| ${goto 165}${cpubar cpu7 8,width_cpu_bar}
+# CPU 8 | ${freq 8} MHz ${goto 122}| ${goto 130}${cpu cpu8}% ${goto 152}| ${goto 165}${cpubar cpu8 8,width_cpu_bar}
+# CPU 9 | ${freq 9} MHz ${goto 122}| ${goto 130}${cpu cpu7}% ${goto 152}| ${goto 165}${cpubar cpu9 8,width_cpu_bar}
+# CPU 10 | ${freq 10} MHz ${goto 122}| ${goto 130}${cpu cpu8}% ${goto 152}| ${goto 165}${cpubar cpu10 8,width_cpu_bar}
+# CPU 11 | ${freq 11} MHz ${goto 122}| ${goto 130}${cpu cpu7}% ${goto 152}| ${goto 165}${cpubar cpu11 8,width_cpu_bar}
+# CPU 12 | ${freq 12} MHz ${goto 122}| ${goto 130}${cpu cpu8}% ${goto 152}| ${goto 165}${cpubar cpu12 8,width_cpu_bar}
 
-#________________________________________________________________________
+________________________________________________________________________
 
-Highest CPU$alignr CPU%       MEM%
+HIGHEST CPU$alignr   CPU%       MEM%
 _________________________________________________________________________
 
 ${top name 1}$alignr${top cpu 1}       ${top mem 1}  
@@ -105,9 +112,9 @@ ${top name 5}$alignr${top cpu 5}       ${top mem 5}
 ${top name 6}$alignr${top cpu 6}       ${top mem 6}  
 #${top name 7}$alignr${top cpu 7}       ${top mem 7}  
 
-#__________________________________________________________________________
+__________________________________________________________________________
 
-Highest MEM$alignr CPU%       MEM%
+HIGHEST MEM$alignr   CPU%       MEM%
 ___________________________________________________________________________
 
 ${top_mem name 1}$alignr${top_mem cpu 1}       ${top_mem mem 1}  
@@ -128,7 +135,7 @@ ${fs_bar 5 /}
 #home: ${alignr}${fs_used /home} / ${fs_size /home}
 #${fs_bar 5 /home}
 
-TMP: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
+tmp: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
 ${fs_bar 5 /tmp}
 
 ]]

@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Zimbabwe
+Comment=A sleek theme using the Zimbabwe color palette
+Type=X-GNOME-Metatheme
+Encoding=UTF-8
+
+[X-Settings]
+Gtk/ColorScheme=base_color:#2d3244\nhighlight_color:#5e81ac\nhighlighted_text_color:#adb7ec\nlink_color:#5294e2\nlink_visited_color:#7c818c\ntext_color:#adb7ec\ntooltip_base_color:#4b5162\ntooltip_text_color:#adb7ec\nwindow_color:#292d3e\nwindow_text_color:#adb7ec
+
+[Gtk Theme]
+Name=Zimbabwe
+Gtk2Theme=true
+Gtk3Theme=true
+Gtk4Theme=true
+
+[Settings]
+gtk-theme-name=Zimbabwe
+gtk-application-prefer-dark-theme=true
+gtk-decoration-layout=:minimize,maximize,close

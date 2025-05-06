@@ -1,0 +1,81 @@
+conky.config = {
+    background = true,
+    font = 'Roboto Mono:size=10',
+    use_xft = true,
+    update_interval = 1.2,
+    total_run_times = 0,
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_argb_value = 20,
+    own_window_class = 'conky',
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+    double_buffer = true,
+    minimum_width = 220,
+    maximum_width = 220,
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    border_inner_margin = 8,
+    border_outer_margin = 8,
+    draw_graph_borders = true,
+    default_color = '#adb7ec', -- soft light blue
+    gap_x = 25,
+    gap_y = 25,
+    alignment = 'middle_right',
+    no_buffers = true,
+    uppercase = false,
+    cpu_avg_samples = 2,
+    override_utf8_locale = false,
+
+    -- Load Lua scripts
+    lua_load = '~/.config/conky/lua_rings_arc_palenight.lua ~/.config/conky/lua_top_processes.lua',
+    lua_draw_hook_pre = 'main',
+}
+
+conky.text = [[
+${font Roboto Mono:bold:size=11}${color #61afef}  Date & Time${color}${font}
+${time %Y.%m.%d %H:%M}
+
+${font Roboto Mono:bold:size=11}${color #c678dd}  Battery${color}${font}
+Energy: ${alignr}${battery_percent BAT0}%  
+${battery_bar 6 BAT0}
+Remaining: ${alignr}${if_empty ${battery_time}}AC ${acpiacadapter}${else}${battery_time}${endif}
+
+${font Roboto Mono:bold:size=11}${color #56b6c2}  Uptime & Temp${color}${font}
+Uptime: $alignr$uptime
+System Temp: ${alignr}${acpitemp}°C
+
+${font Roboto Mono:bold:size=11}${color #c678dd}  CPU & Fan${color}${font}
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+Fan: ${alignr}${hwmon 0 fan 1} RPM
+
+${font Roboto Mono:bold:size=11}${color #61afef}  RAM${color}${font}
+RAM: ${alignr}$legacymem / $memmax ($memperc%)
+${membar 6}
+
+Swap: ${alignr}$swap / $swapmax ($swapperc%)
+${swapbar 6}
+
+${font Roboto Mono:bold:size=11}${color #c678dd}  Disk Usage${color}${font}
+root: ${alignr}${fs_used /} / ${fs_size /}
+${fs_bar 5 /}
+
+tmp: ${alignr}${fs_used /tmp} / ${fs_size /tmp}
+${fs_bar 5 /tmp}
+
+${font Roboto Mono:bold:size=11}${color #56b6c2}  Disk IO${color}${font}
+IO-R: ${diskio_read /dev/sda} ${alignr}IO-W: ${diskio_write}
+${diskiograph_read /dev/sda 15,107} ${alignr}${diskiograph_write /dev/sda 15,107}
+
+${font Roboto Mono:bold:size=11}${color #ff79c6}  Network${color}${font}
+Down: ${downspeed wlp3s0} kB/s $alignr Up: ${upspeed wlp3s0} kB/s
+${downspeedgraph wlp3s0 15,107 #61afef #3b4252} ${alignr}${upspeedgraph wlp3s0 15,107 #c678dd #3b4252}
+
+${font Roboto Mono:bold:size=11}${color #61afef}  Top CPU Processes${color}${font}
+${lua_parse conky_top_processes}
+
+${font Roboto Mono:bold:size=11}${color #c678dd}  CPU Cores Usage${color}${font}
+${lua_parse conky_cpu_core_graphs}
+]]

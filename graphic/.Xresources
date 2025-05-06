@@ -88,13 +88,15 @@ xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 ! Scheme: Lalit Magant (http://github.com/tilal6991)
 
 ! #define base00 #282c34
-#define base00 #2e3440
+! #define base00 #2e3440
+#define base00 #292d3e
 #define base01 #353b45
 #define base02 #3e4451
 #define base03 #545862
 #define base04 #565c64
 ! #define base05 #abb2bf
-#define base05 #e5e9f0
+! #define base05 #e5e9f0
+#define base05 #adb7ec
 #define base06 #b6bdca
 #define base07 #c8ccd4
 #define base08 #e06c75
@@ -107,11 +109,11 @@ xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 #define base0F #be5046
 
 *foreground:   base05
-#ifdef background_opacity
-*background:   [background_opacity]base00
-#else
+! #ifdef background_opacity
+! *background:   [background_opacity]base00
+! #else
 *background:   base00
-#endif
+! #endif
 *cursorColor:  base05
 
 *color0:       base00

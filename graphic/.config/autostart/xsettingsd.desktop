@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=xsettingsd
+Name=xsettingsd
+OnlyShowIn=LXQt;
+Type=Application
+Version=1.0
+X-LXQt-X11-Only=true

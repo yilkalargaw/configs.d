@@ -1,2 +1,81 @@
+# palenight
+[Colors:Button]
+BackgroundNormal=41,45,62
+BackgroundAlternate=68,66,103
+DecorationFocus=130,170,255
+DecorationHover=98,114,164
+ForegroundNormal=166,172,205
+ForegroundActive=195,201,232
+ForegroundInactive=92,95,119
+
+[Colors:Selection]
+BackgroundNormal=68,66,103
+ForegroundNormal=195,201,232
+
+[Colors:Tooltip]
+BackgroundNormal=41,45,62
+ForegroundNormal=166,172,205
+
 [Colors:View]
-BackgroundNormal=#2e3440
+BackgroundNormal=41,45,62
+ForegroundNormal=166,172,205
+BackgroundAlternate=50,54,70
+
+[Colors:Window]
+BackgroundNormal=41,45,62
+ForegroundNormal=166,172,205
+
+# # nordic darker
+# [Colors:Button]
+# BackgroundNormal=46,52,64
+# BackgroundAlternate=59,66,82
+# DecorationFocus=129,161,193
+# DecorationHover=136,192,208
+# ForegroundNormal=216,222,233
+# ForegroundActive=236,239,244
+# ForegroundInactive=76,86,106
+
+# [Colors:Selection]
+# BackgroundNormal=46,52,64
+# ForegroundNormal=236,239,244
+
+# [Colors:Tooltip]
+# BackgroundNormal=46,52,64
+# ForegroundNormal=216,222,233
+
+# [Colors:View]
+# BackgroundNormal=40,43,54
+# ForegroundNormal=216,222,233
+
+# [Colors:Window]
+# BackgroundNormal=40,43,54
+# ForegroundNormal=216,222,233
+
+
+# [Colors:Button]
+# BackgroundNormal=41,45,62
+# BackgroundAlternate=68,66,103
+# DecorationFocus=130,170,255
+# DecorationHover=98,114,164
+# ForegroundNormal=166,172,205
+# ForegroundActive=195,201,232
+# ForegroundInactive=92,95,119
+
+# [Colors:Selection]
+# BackgroundNormal=41,45,62
+# ForegroundNormal=195,201,232
+
+# [Colors:Tooltip]
+# BackgroundNormal=41,45,62
+# ForegroundNormal=166,172,205
+
+# [Colors:View]
+# BackgroundNormal=41,45,62
+# ForegroundNormal=166,172,205
+
+# [Colors:Window]
+# BackgroundNormal=41,45,62
+# ForegroundNormal=166,172,205
+
+[Icons]
+Theme=Papirus-Dark
